@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Canteen - Login</title>
+    <!-- Google Fonts for premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS Styles for Login -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- ==================== LOGIN / SIGN UP CONTAINER ==================== -->
+    <div id="login-container" class="login-wrapper">
+        <div class="login-card">
+            <!-- Left Side: Form Controls -->
+            <div class="login-form-side">
+                <!-- Toggle Header -->
+                <div class="auth-toggle">
+                    <button id="toggle-login-btn" class="toggle-btn active" onclick="switchAuthMode('login')">Login</button>
+                    <button id="toggle-signup-btn" class="toggle-btn" onclick="switchAuthMode('signup')">Sign Up</button>
+                </div>
+
+                <!-- Form Validation Error Message Display -->
+                <div id="auth-error-message" class="error-banner" style="display: none;"></div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form" onsubmit="handleLogin(event)">
+                    <div class="input-group email-group">
+                        <input type="email" id="login-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group password-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember-me">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-primary auth-submit-btn">Login</button>
+                    <a href="#" class="forgot-link" onclick="handleForgotPassword(event)">Forgot Password?</a>
+                </form>
+
+                <!-- Sign Up Form (Hidden by Default) -->
+                <form id="signup-form" class="auth-form" style="display: none;" onsubmit="handleSignUp(event)">
+                    <div class="input-group username-group">
+                        <input type="text" id="signup-username" placeholder="Username" required>
+                    </div>
+                    <div class="input-group email-group">
+                        <input type="email" id="signup-email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group password-group">
+                        <input type="password" id="signup-password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group password-group confirm-group">
+                        <input type="password" id="signup-confirm-password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn-primary auth-submit-btn">Sign Up</button>
+                </form>
+            </div>
+
+            <!-- Right Side: Welcome Promo Panel -->
+            <div class="login-promo-side">
+                <div class="promo-content">
+                    <h1>Welcome to <br><span class="canteen-highlight">Canteen</span></h1>
+                    <p>Your favorite meals, just a click away!</p>
+                    <div class="promo-icons">
+                        <i class="fa-solid fa-burger promo-icon"></i>
+                        <i class="fa-solid fa-pizza-slice promo-icon"></i>
+                        <i class="fa-solid fa-receipt promo-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script File for Login Logic -->
+    <script src="login.js"></script>
+</body>
+</html>
